@@ -1,0 +1,617 @@
+body {
+  margin: 0;
+}
+
+#screen {
+  position: relative;
+  width: 100vw;
+  height: 56.25vw;
+}
+
+#game {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: crosshair;
+}
+
+#game_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(baggrund.svg);
+  background-size: cover;
+}
+
+#music_credit {
+  position: absolute;
+  color: white;
+  font-size: 0.7vw;
+  top: 54vw;
+  left: 1vw;
+}
+
+/*Game elements*/
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#heks_container {
+  position: absolute;
+}
+
+#heks_sprite {
+  background-image: url(heks.svg);
+  background-size: cover;
+}
+
+#knivmand_container {
+  position: absolute;
+}
+
+#knivmand_sprite {
+  background-image: url(knivmand.svg);
+  background-size: cover;
+}
+
+#zombie_container1 {
+  position: absolute;
+}
+
+#zombie_sprite1 {
+  background-image: url(zombie_1.svg);
+  background-size: cover;
+}
+
+#zombie_container2 {
+  position: absolute;
+}
+
+#zombie_sprite2 {
+  background-image: url(zombie_2.svg);
+  background-size: cover;
+}
+
+/*Positioner (bagerst til venstre...)*/
+.pos1 {
+  top: 22vw;
+  left: 26.5vw;
+  animation-name: hop_lille_kf;
+}
+
+.pos1 > div {
+  width: 7vw;
+  height: 11vw;
+}
+
+.pos2 {
+  top: 22vw;
+  left: 48vw;
+  animation-name: hop_lille_kf;
+}
+
+.pos2 > div {
+  width: 7vw;
+  height: 11vw;
+}
+
+.pos3 {
+  top: 22vw;
+  left: 69vw;
+  animation-name: hop_lille_kf;
+}
+
+.pos3 > div {
+  width: 7vw;
+  height: 11vw;
+}
+
+.pos4 {
+  top: 30vw;
+  left: 37vw;
+  animation-name: hop_mellem_kf;
+}
+
+.pos4 > div {
+  width: 9vw;
+  height: 14vw;
+}
+
+.pos5 {
+  top: 30vw;
+  left: 58vw;
+  animation-name: hop_mellem_kf;
+}
+
+.pos5 > div {
+  width: 9vw;
+  height: 14vw;
+}
+
+.pos6 {
+  top: 42vw;
+  left: 27vw;
+  animation-name: hop_stor_kf;
+}
+
+.pos6 > div {
+  width: 10vw;
+  height: 16vw;
+}
+
+.pos7 {
+  top: 42vw;
+  left: 48vw;
+  animation-name: hop_stor_kf;
+}
+
+.pos7 > div {
+  width: 10vw;
+  height: 16vw;
+}
+
+.pos8 {
+  top: 42vw;
+  left: 69vw;
+  animation-name: hop_stor_kf;
+}
+
+.pos8 > div {
+  width: 10vw;
+  height: 16vw;
+}
+
+/*Game UI*/
+#game_middleground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(mellemgrund.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+
+#game_foreground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(forgrund.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/*Point*/
+#score_board {
+  position: absolute;
+  top: 3vw;
+  left: 85vw;
+  font-size: 2vw;
+  color: white;
+}
+
+#energy_board {
+  position: absolute;
+  top: 2.6vw;
+  left: 7vw;
+  display: flex;
+  gap: 0.5vw;
+  justify-content: center;
+}
+
+#energy_board img {
+  width: 3vw;
+}
+
+/* Tid*/
+#time_board_container {
+  position: absolute;
+  top: 2.6vw;
+  left: 39vw;
+  width: 25vw;
+  height: 2.9vw;
+  background-image: url(tid_bar.svg);
+  background-size: cover;
+}
+
+#time_board_sprite {
+  width: 1.8vw;
+  height: 2.6vw;
+  background-image: url(tid_zombie.svg);
+  background-size: cover;
+}
+
+.time {
+  animation-name: time_kf;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes time_kf {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(22.5vw);
+  }
+}
+
+#start {
+  position: absolute;
+  background-image: url(startside.svg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+nav {
+  position: absolute;
+  top: 1vw;
+  left: 2vw;
+}
+
+a {
+  font-family: "Escoffier Capitaux", serif;
+  font-size: 2vw;
+  text-decoration: none;
+  font-weight: 700;
+  color: #d3e7ea;
+}
+
+a:hover {
+  color: #ffbf85;
+}
+
+#start_knap {
+  position: absolute;
+  top: 37vw;
+  left: 7.5vw;
+  background-image: url(startknap.svg);
+  background-size: cover;
+  width: 21vw;
+  height: 6vw;
+
+  animation-name: puls_kf;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes puls_kf {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#regelknap {
+  position: absolute;
+  top: 45vw;
+  left: 9.5vw;
+  background-image: url(regel_knap.svg);
+  background-size: cover;
+  width: 17vw;
+  height: 5vw;
+}
+
+#regler {
+  position: absolute;
+  background-image: url(regelside.svg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+#start_knap2 {
+  position: absolute;
+  top: 35vw;
+  left: 41vw;
+  background-image: url(startknap.svg);
+  background-size: cover;
+  width: 18vw;
+  height: 6vw;
+
+  animation-name: puls_kf;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes puls_kf {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#game_over {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(game_over.svg);
+  background-size: cover;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+#game_over_points {
+  position: absolute;
+  top: 39vw;
+  left: 51vw;
+  color: white;
+  font-size: 3vw;
+}
+
+#genstart1 {
+  position: absolute;
+  top: 43vw;
+  left: 40vw;
+  background-image: url(genstartknap.svg);
+  background-size: cover;
+  width: 22vw;
+  height: 6vw;
+
+  animation-name: puls_kf;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes puls_kf {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#level_complete {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(level_complete.svg);
+  background-size: cover;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+#level_complete_points {
+  position: absolute;
+  top: 38vw;
+  left: 51vw;
+  color: white;
+  font-size: 3vw;
+}
+
+#genstart2 {
+  position: absolute;
+  top: 43vw;
+  left: 40vw;
+  background-image: url(genstartknap.svg);
+  background-size: cover;
+  width: 22vw;
+  height: 6vw;
+
+  animation-name: puls_kf;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes puls_kf {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*Animationer*/
+.hop {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hop_stor_kf {
+  0 {
+    transform: translateY(0vw);
+  }
+
+  20% {
+    transform: translateY(-10vw);
+  }
+
+  35% {
+    transform: translateY(-10vw) scale(1);
+  }
+
+  50% {
+    transform: translateY(-10vw) scale(1);
+  }
+
+  75% {
+    transform: translateY(0vw) scale(0);
+  }
+
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+@keyframes hop_mellem_kf {
+  0 {
+    transform: translateY(0vw);
+  }
+
+  20% {
+    transform: translateY(-9vw);
+  }
+
+  35% {
+    transform: translateY(-9vw) scale(1);
+  }
+
+  50% {
+    transform: translateY(-9vw) scale(1);
+  }
+
+  75% {
+    transform: translateY(0vw) scale(0);
+  }
+
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+@keyframes hop_lille_kf {
+  0 {
+    transform: translateY(0vw);
+  }
+
+  20% {
+    transform: translateY(-8vw);
+  }
+
+  35% {
+    transform: translateY(-8vw) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8vw) scale(1);
+  }
+
+  75% {
+    transform: translateY(0vw) scale(0);
+  }
+
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+/*
+.gray {
+    filter: grayscale(80%);
+}
+*/
+
+.roter_forsvind {
+  animation-name: roter_forsvind_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes roter_forsvind_kf {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(0);
+  }
+}
+
+.zoom_forsvind {
+  animation-name: zoom_forsvind_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes zoom_forsvind_kf {
+  0% {
+    transform: scale(100%);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.skjul {
+  display: none;
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
+.delay1 {
+  animation-delay: 0;
+}
+
+.delay2 {
+  animation-delay: 1s;
+}
+
+.delay3 {
+  animation-delay: 3s;
+}
+
+.speed1 {
+  animation-duration: 1.1s;
+}
+
+.speed2 {
+  animation-duration: 1.3s;
+}
+
+.speed3 {
+  animation-duration: 1.5s;
+}
+
+.speed4 {
+  animation-duration: 1.7s;
+}
+
+.speed5 {
+  animation-duration: 1.9s;
+}

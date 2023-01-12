@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="screen">
+        <div id="game">
+            <div id="game_background"></div>
+            <div id="game_middleground"></div>
+            <div id="game_elements">
+                <div id="heks_container">
+                    <div id="heks_sprite"></div>
+                </div>
+                <div id="knivmand_container">
+                    <div id="knivmand_sprite"></div>
+                </div>
+                <div id="zombie_container1">
+                    <div id="zombie_sprite1"></div>
+                </div>
+                <div id="zombie_container2">
+                    <div id="zombie_sprite2"></div>
+                </div>
+            </div>
+        </div>
+        <div id="game_foreground">
+            <div id="music_credit">
+                <p>Royalty Free Music from Bensound</p>
+            </div>
+        </div>
+        <div id="game_ui">
+            <div id="score_board">
+                <div id="scoreboard_txt"></div>
+            </div>
+            <div id="energy_board">
+                <div id="liv1"><img src="liv.svg" alt="spoegelse"></div>
+                <div id="liv2"><img src="liv.svg" alt="spoegelse"></div>
+                <div id="liv3"><img src="liv.svg" alt="spoegelse"></div>
+            </div>
+            <div id="time_board_container">
+                <div id="time_board_sprite">
+                </div>
+            </div>
+        </div>
+        <div id="start">
+            <nav><a href="http://emilieschultz.dk/kea/04_animation/spil/index.html">Hjem</a></nav>
+            <div id="start_knap"></div>
+            <div id="regelknap"></div>
+        </div>
+        <div id="regler">
+            <div id="start_knap2"></div>
+        </div>
+        <div id="game_over">
+            <div id="genstart1"></div>
+            <div id="game_over_points"></div>
+        </div>
+        <div id="level_complete">
+            <div id="genstart2"></div>
+            <div id="level_complete_points"></div>
+        </div>
+    </div>
+    <audio src="sounds/creepy_background.mp3" id="creepy"></audio>
+    <audio src="sounds/buzz.mp3" id="buzz"></audio>
+    <audio src="sounds/kling.mp3" id="kling"></audio>
+    <audio src="sounds/pling.mp3" id="pling"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
